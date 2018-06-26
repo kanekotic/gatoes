@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "bin": {
-    "convert-guid": "bin/raw-to-guid.js"
+    "gatoes": "bin/gatoes.js"
   },
   "keywords": [
     "command line",
