@@ -1,0 +1,44 @@
+{
+  "name": "gatoes",
+  "version": "0.0.1",
+  "description": "google analytics export to elastic search",
+  "main": "index.js",
+  "repository": "git@github.com:kanekotic/gatoes.git",
+  "author": "kanekotic <alvarojosepl@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "convert-guid": "bin/raw-to-guid.js"
+  },
+  "keywords": [
+    "command line",
+    "tool",
+    "Google",
+    "analytics",
+    "ElasticSearch"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:dev": "jest --watchAll",
+    "test:cov": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "deploy:major": "yarn version --major",
+    "deploy:minor": "yarn version --minor",
+    "deploy:patch": "yarn version --patch",
+    "preversion": "yarn test",
+    "postversion": "git push && git push --tags"
+  },
+  "jest": {
+    "automock": false,
+    "testMatch": [
+      "**/test/**/*-test.js"
+    ]
+  },
+  "devDependencies": {
+    "coveralls": "3.0.1",
+    "jest": "23.2.0"
+  },
+  "dependencies": {
+    "commander": "2.15.1",
+    "googleapis": "32.0.0"
+  }
+}
