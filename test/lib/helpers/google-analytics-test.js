@@ -53,17 +53,18 @@ describe('analytics', () => {
         rt_metrics: faker.random.uuid(), 
         rt_dimensions: faker.random.uuid(), 
         maxResults: faker.random.uuid()
-    }
+    },
+        jwtClient = { client: faker.random.uuid() }
 
     it('uses analytics v3', async () => {
-        helper.realtime(configuration)
+        helper.realtime(jwtClient, configuration)
         expect(gapi.analytics).toBeCalledWith('v3')
     })
     
     it('calls realtime api with correct configuration', async () => {
         let expectedResult = faker.random.uuid()
         let expectParams = {
-            auth: configuration.jwtClient,
+            auth: jwtClient,
             ids: `ga:${configuration.viewId}`,
             metrics: configuration.rt_metrics,
             dimensions: configuration.rt_dimensions,
@@ -71,7 +72,8 @@ describe('analytics', () => {
         }
         gapi.analytics('v3').data.realtime.get.mockImplementation((_, fun) =>fun(expectedResult))
         
-        let result = await helper.realtime(configuration)
+        let result = await helper.realtime(jwtClient, configuration)
+        expect(gapi.analytics('v3').data.realtime.get.mock.calls[0][0]).toEqual(expectParams)
         expect(result).toBe(expectedResult)
     })
 })
