@@ -1,8 +1,16 @@
 jest.mock('googleapis', () => {
+    let analytics = {
+        data:{
+            realtime:{
+                get: jest.fn()
+            }
+        }
+    }  
     return {
         auth: {
             JWT: jest.fn()
-        }
+        },
+        analytics: jest.fn(() => analytics)
     }
 })
 
@@ -10,7 +18,7 @@ const helper = require('../../../lib/helpers/google-analytics'),
     faker = require('faker'),
     gapi = require('googleapis')
 
-describe('analytics retriever', () => {
+describe('google authorization', () => {
     it("login to google api returns token", async () => {
         let token = faker.random.uuid()
         jwtMock = {
@@ -35,5 +43,35 @@ describe('analytics retriever', () => {
         gapi.auth.JWT.mockImplementation(() => {return jwtMock } )
 
         await expect(helper.login("", "")).rejects.toMatch(`unable to authorize to googleapi (${error})`)
+    })
+})
+
+describe('analytics', () => {
+    let configuration = { 
+        jwtClient: faker.random.uuid(),
+        viewId: faker.random.uuid(), 
+        rt_metrics: faker.random.uuid(), 
+        rt_dimensions: faker.random.uuid(), 
+        maxResults: faker.random.uuid()
+    }
+
+    it('uses analytics v3', async () => {
+        helper.realtime(configuration)
+        expect(gapi.analytics).toBeCalledWith('v3')
+    })
+    
+    it('calls realtime api with correct configuration', async () => {
+        let expectedResult = faker.random.uuid()
+        let expectParams = {
+            auth: configuration.jwtClient,
+            ids: `ga:${configuration.viewId}`,
+            metrics: configuration.rt_metrics,
+            dimensions: configuration.rt_dimensions,
+            'max-results': configuration.maxResults
+        }
+        gapi.analytics('v3').data.realtime.get.mockImplementation((_, fun) =>fun(expectedResult))
+        
+        let result = await helper.realtime(configuration)
+        expect(result).toBe(expectedResult)
     })
 })
