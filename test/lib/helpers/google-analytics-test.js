@@ -7,10 +7,12 @@ jest.mock('googleapis', () => {
         }
     }  
     return {
-        auth: {
-            JWT: jest.fn()
-        },
-        analytics: jest.fn(() => analytics)
+        google: {
+            auth: {
+                JWT: jest.fn()
+            },
+            analytics: jest.fn(() => analytics)
+        }
     }
 })
 
@@ -24,14 +26,14 @@ describe('google authorization', () => {
         jwtMock = {
             authorize: (callback) => {callback(undefined, token)}
         }
-        gapi.auth.JWT.mockImplementation(() => {return jwtMock } )
+        gapi.google.auth.JWT.mockImplementation(() => {return jwtMock } )
         let email = faker.internet.email(),
             path = `/some/file/path/${faker.random.uuid()}.conf`
             scope = ['https://www.googleapis.com/auth/analytics.readonly']
         
         let result = await helper.login(email, path)
         
-        expect(gapi.auth.JWT).toBeCalledWith(email, path, null, scope)
+        expect(gapi.google.auth.JWT).toBeCalledWith(email, path, null, scope)
         expect(result).toBe(jwtMock)
     })
     
@@ -40,7 +42,7 @@ describe('google authorization', () => {
         jwtMock = {
             authorize: (callback) => {callback(error, undefined)}
         }
-        gapi.auth.JWT.mockImplementation(() => {return jwtMock } )
+        gapi.google.auth.JWT.mockImplementation(() => {return jwtMock } )
 
         await expect(helper.login("", "")).rejects.toMatch(`unable to authorize to googleapi (${error})`)
     })
@@ -58,7 +60,7 @@ describe('analytics', () => {
 
     it('uses analytics v3', async () => {
         helper.realtime(jwtClient, configuration)
-        expect(gapi.analytics).toBeCalledWith('v3')
+        expect(gapi.google.analytics).toBeCalledWith('v3')
     })
     
     it('calls realtime api with correct configuration', async () => {
@@ -70,10 +72,10 @@ describe('analytics', () => {
             dimensions: configuration.rt_dimensions,
             'max-results': configuration.maxResults
         }
-        gapi.analytics('v3').data.realtime.get.mockImplementation((_, fun) =>fun(expectedResult))
+        gapi.google.analytics('v3').data.realtime.get.mockImplementation((_, fun) =>fun(expectedResult))
         
         let result = await helper.realtime(jwtClient, configuration)
-        expect(gapi.analytics('v3').data.realtime.get.mock.calls[0][0]).toEqual(expectParams)
+        expect(gapi.google.analytics('v3').data.realtime.get.mock.calls[0][0]).toEqual(expectParams)
         expect(result).toBe(expectedResult)
     })
 })
