@@ -72,7 +72,7 @@ describe('analytics', () => {
             dimensions: configuration.rt_dimensions,
             'max-results': configuration.maxResults
         }
-        gapi.google.analytics('v3').data.realtime.get.mockImplementation((_, fun) =>fun(expectedResult))
+        gapi.google.analytics('v3').data.realtime.get.mockImplementation((_, fun) =>fun(undefined, expectedResult))
         
         let result = await helper.realtime(jwtClient, configuration)
         expect(gapi.google.analytics('v3').data.realtime.get.mock.calls[0][0]).toEqual(expectParams)
