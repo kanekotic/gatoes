@@ -1,9 +1,7 @@
 jest.mock('googleapis', () => {
     let analytics = {
-        data:{
-            realtime:{
-                get: jest.fn()
-            }
+        reports:{
+            batchGet: jest.fn()
         }
     }  
     return {
@@ -11,7 +9,7 @@ jest.mock('googleapis', () => {
             auth: {
                 JWT: jest.fn()
             },
-            analytics: jest.fn(() => analytics)
+            analyticsreporting :  jest.fn(() => analytics)
         }
     }
 })
@@ -50,32 +48,45 @@ describe('google authorization', () => {
 
 describe('analytics', () => {
     let configuration = { 
-        jwtClient: faker.random.uuid(),
-        viewId: faker.random.uuid(), 
-        rt_metrics: faker.random.uuid(), 
-        rt_dimensions: faker.random.uuid(), 
-        maxResults: faker.random.uuid()
-    },
-        jwtClient = { client: faker.random.uuid() }
+            jwtClient: faker.random.uuid(),
+            viewId: faker.random.uuid(), 
+            metrics: faker.random.uuid(), 
+            dimensions: faker.random.uuid(),
+            daterange: {
+                startDate: '2018-03-17',
+                endDate: '2018-03-24'
+            }
+        },
+        jwtClient = { client: faker.random.uuid() },
+        expectSetup = {
+            version: 'v4',
+            auth: jwtClient
+        }
 
-    it('uses analytics v3', async () => {
-        helper.realtime(jwtClient, configuration)
-        expect(gapi.google.analytics).toBeCalledWith('v3')
+    it('uses analytics v4', async () => {
+        helper.get(jwtClient, configuration)
+        expect(gapi.google.analyticsreporting).toBeCalledWith(expectSetup)
     })
     
-    it('calls realtime api with correct configuration', async () => {
+    it('calls report api with correct configuration', async () => {
         let expectedResult = faker.random.uuid()
-        let expectParams = {
-            auth: jwtClient,
-            ids: `ga:${configuration.viewId}`,
-            metrics: configuration.rt_metrics,
-            dimensions: configuration.rt_dimensions,
-            'max-results': configuration.maxResults
-        }
-        gapi.google.analytics('v3').data.realtime.get.mockImplementation((_, fun) =>fun(undefined, expectedResult))
+        let expectedRequest = {
+            "viewId":configuration.viewId,
+            "dateRanges":[configuration.daterange],
+            "metrics":[
+              {
+                "expression":configuration.metrics
+              }],
+            "dimensions": [
+              {
+                "name":configuration.dimensions
+              }]
+          }
+        gapi.google.analyticsreporting(expectSetup).reports.batchGet.mockImplementation(() =>Promise.resolve(expectedResult))
         
-        let result = await helper.realtime(jwtClient, configuration)
-        expect(gapi.google.analytics('v3').data.realtime.get.mock.calls[0][0]).toEqual(expectParams)
+        let result = await helper.get(jwtClient, configuration)
+
+        expect(gapi.google.analyticsreporting(expectSetup).reports.batchGet.mock.calls[0][0]).toEqual(expectedRequest)
         expect(result).toBe(expectedResult)
     })
 })
