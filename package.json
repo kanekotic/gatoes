@@ -1,14 +1,14 @@
 {
-  "name": "gatoes",
+  "name": "gatoo",
   "version": "0.0.1",
-  "description": "google analytics export to elastic search",
-  "main": "index.js",
+  "description": "google analytics export",
+  "main": "lib/index.js",
   "repository": "git@github.com:kanekotic/gatoes.git",
   "author": "kanekotic <alvarojosepl@gmail.com>",
   "license": "MIT",
   "private": false,
   "bin": {
-    "gatoes": "bin/gatoes.js"
+    "gatoo": "bin/gatoo.js"
   },
   "keywords": [
     "command line",
