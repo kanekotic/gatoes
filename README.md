@@ -5,6 +5,8 @@ this project will provide a command line and a library to export google analytic
 
 ## Use as library
 
+first step is to add this to your project throught `yarn add gatoo` or `npm install gatoo`
+
 currently you can retrieve in a simple way data from google analytics and route it to your prefered output. An example of retreaval is the next one.
 
 ```js
