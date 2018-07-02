@@ -5,12 +5,20 @@
 
 this project will provide a command line and a library to export google analytics to your prefered endpoint (console, log management, or db).
 
+## Use as Command Line
+install globally with `npm install gatoo -g`. Aftyer this it can be run with the next command:
+
+```bash
+gatoo console <email> <ReplativePath> <viewId> <startDate> <endDate> <metrics> <dimensions>
+```
+
 ## Use as library
 
 first step is to add this to your project throught `yarn add gatoo` or `npm install gatoo`
 
-currently you can retrieve in a simple way data from google analytics and route it to your prefered output. An example of retreaval is the next one.
+currently you can retrieve in a simple way data from google analytics and route it to your prefered output. An example of retrieval is the next one.
 
+### Import
 ```js
 const importer = require('../lib/index').importer
     path = require('path')
@@ -35,19 +43,68 @@ const example = async () => {
 example()
 ```
 
-## Use as Command Line
+### Export
+```js
+const exporter = require('../lib/index').exporter
+    path = require('path')
+    
+const email = 'your email' //email account from the user credentials
+    keyPath = path.join(__dirname, 'your credentials')// path to credentials json or pem
+    config = {
+    viewId: "some viewId",//the view id to query
+    daterange:{
+        "endDate":"2017-06-30",
+        "startDate":"2016-06-30"
+      },
+      metrics: "ga:users",
+      dimensions: "ga:date"
+    }
 
-Soon
+const doSomething () => {}
+
+const example = async () => {
+    const result = await exporter(email, keyPath, config,  doSomething)
+}
+
+example()
+```
+
+### Export to console
+```js
+const exporter = require('../lib/index').outputTo
+    path = require('path')
+    
+const email = 'your email' //email account from the user credentials
+    keyPath = path.join(__dirname, 'your credentials')// path to credentials json or pem
+    config = {
+    viewId: "some viewId",//the view id to query
+    daterange:{
+        "endDate":"2017-06-30",
+        "startDate":"2016-06-30"
+      },
+      metrics: "ga:users",
+      dimensions: "ga:date"
+    }
+
+const example = async () => {
+    const result = await outputTo.console(email, keyPath, config)
+}
+
+example()
+```
 
 ## TODO
 
 - [x] Retrieve data from google analytics 
 - [x] Create library
-- [ ] Create adapter for output console  
+- [x] Create adapter for output console  
+- [x] Create command line tool console  
 - [ ] Create adapter logstash  
 - [ ] Create adapter fluentd  
 - [ ] Create adapter ES  
-- [ ] Create command line tool  
+- [ ] Create command line tool logstash  
+- [ ] Create command line tool fluentd  
+- [ ] Create command line tool ES  
 
 ### Logo
 Check out the new logo that I created on <a href="http://logomakr.com" title="Logo Makr">LogoMakr.com</a> https://logomakr.com/32f2Md
