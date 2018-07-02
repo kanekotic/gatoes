@@ -19,7 +19,7 @@ const helper = require('../../../lib/helpers/google-analytics'),
     gapi = require('googleapis')
 
 describe('google authorization', () => {
-    it("login to google api returns token", async () => {
+    it('login to google api returns token', async () => {
         let token = faker.random.uuid()
         jwtMock = {
             authorize: (callback) => {callback(undefined, token)}
@@ -35,14 +35,14 @@ describe('google authorization', () => {
         expect(result).toBe(jwtMock)
     })
     
-    it("login to google api fails", async () => {
+    it('login to google api fails', async () => {
         let error = faker.random.uuid()
         jwtMock = {
             authorize: (callback) => {callback(error, undefined)}
         }
         gapi.google.auth.JWT.mockImplementation(() => {return jwtMock } )
 
-        await expect(helper.login("", "")).rejects.toMatch(`unable to authorize to googleapi (${error})`)
+        await expect(helper.login('','')).rejects.toMatch(`unable to authorize to googleapi (${error})`)
     })
 })
 
@@ -70,18 +70,25 @@ describe('analytics', () => {
     
     it('calls report api with correct configuration', async () => {
         let expectedResult = faker.random.uuid()
-        let expectedRequest = {
-            "viewId":configuration.viewId,
-            "dateRanges":[configuration.daterange],
-            "metrics":[
-              {
-                "expression":configuration.metrics
-              }],
-            "dimensions": [
-              {
-                "name":configuration.dimensions
-              }]
-          }
+        let expectedRequest = 
+        {
+            resource:{
+                reportRequests:[{
+                    viewId: configuration.viewId,
+                    dateRanges:[configuration.daterange],
+                    metrics:[
+                        {
+                            expression:configuration.metrics
+                        }
+                    ],
+                    dimensions: [
+                        {
+                            name:configuration.dimensions
+                        }
+                    ]
+                }]
+            }
+        }
         gapi.google.analyticsreporting(expectSetup).reports.batchGet.mockImplementation(() =>Promise.resolve(expectedResult))
         
         let result = await helper.get(jwtClient, configuration)
