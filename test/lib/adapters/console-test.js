@@ -5,8 +5,8 @@ const faker = require('faker')
 
 describe('console adapter', () => {
     it('exports console.log',async () => {
-        let output = faker.random.uuid()
+        let output = {data : {somestuff: faker.random.uuid()}}
         adapter(output)
-        expect(console.log).toBeCalledWith(output)
+        expect(console.log).toBeCalledWith(JSON.stringify(output.data))
     })
 })
