@@ -1,11 +1,11 @@
 jest.mock('../../lib/helpers/google-analytics', () => {
     return {
         login: jest.fn(),
-        realtime: jest.fn()
+        get: jest.fn()
     }
 })
 
-const importer = require('../../lib/importer-realtime'),
+const importer = require('../../lib/importer'),
     analytics = require('../../lib/helpers/google-analytics'),
     faker = require('faker')
 
@@ -18,12 +18,12 @@ describe('import realtime', () => {
             expectedResult = faker.random.uuid()
 
         analytics.login.mockImplementation(() => jwtClient)
-        analytics.realtime.mockImplementation(() => Promise.resolve(expectedResult))
+        analytics.get.mockImplementation(() => Promise.resolve(expectedResult))
         
         let result = await importer(email, path, config)
 
         expect(analytics.login).toBeCalledWith(email, path)
-        expect(analytics.realtime).toBeCalledWith(jwtClient, config)
+        expect(analytics.get).toBeCalledWith(jwtClient, config)
         expect(result).toEqual(expectedResult)
     })
 })
