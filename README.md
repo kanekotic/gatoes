@@ -42,7 +42,7 @@ Soon
 ## TODO
 
 - [x] Retrieve data from google analytics 
-- [x] Xreate library
+- [x] Create library
 - [ ] Create adapter for output console  
 - [ ] Create adapter logstash  
 - [ ] Create adapter fluentd  

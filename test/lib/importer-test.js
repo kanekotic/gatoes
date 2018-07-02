@@ -9,7 +9,7 @@ const importer = require('../../lib/importer'),
     analytics = require('../../lib/helpers/google-analytics'),
     faker = require('faker')
 
-describe('import realtime', () => {
+describe('import', () => {
     it('import from google analytics',async () => {
         const email = faker.internet.email(),
             path = `/some/file/path/${faker.random.uuid()}.conf`,
