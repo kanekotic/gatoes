@@ -21,8 +21,7 @@ jest.mock('../../lib/index', () => {
         return "OK"
       }
       return {
-        realtime: jest.fn().mockImplementation(impFun),
-        batch: jest.fn().mockImplementation(impFun)
+        importer: jest.fn().mockImplementation(impFun),
       }
 })
 
@@ -34,7 +33,7 @@ jest.mock('../../package.json', () => {
 })
 
 const commander = require('commander'),
-    gatoes = require('../../bin/gatoes'),
+    gatoo = require('../../bin/gatoo'),
     index = require('../../lib/index'),
     packageJson = require('../../package.json')
 
@@ -43,15 +42,10 @@ describe('command line', () => {
         expect(commander.version.mock.calls[0][0]).toBe(packageJson.version)
     })
 
-    it("is has command to convert in realtime with correct description", () => {
-        expect(commander.command.mock.calls[0][0]).toBe("realtime")
-        expect(commander.description.mock.calls[0][0]).toBe("realtime updates")
+    it("is has command to convert in consol with correct description", () => {
+        expect(commander.command.mock.calls[0][0]).toBe("console")
+        expect(commander.description.mock.calls[0][0]).toBe("get data to console from google analytics")
         expect(commander.action.mock.calls[0][0]).toBeInstanceOf(Function)
     })
 
-    it("is has command to convert in batch with correct description", () => {
-        expect(commander.command.mock.calls[1][0]).toBe("batch")
-        expect(commander.description.mock.calls[1][0]).toBe("batch updates")
-        expect(commander.action.mock.calls[1][0]).toBeInstanceOf(Function)
-    })
 })

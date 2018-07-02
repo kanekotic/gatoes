@@ -8,17 +8,10 @@ program
   .version(packageJson.version)
 
 program
-  .command('realtime')
-  .description('realtime updates')
+  .command('console')
+  .description('get data to console from google analytics')
   .action(() => 
-      console.log(index.realtime())
-  )
-
-program
-  .command('batch')
-  .description('batch updates')
-  .action(() => 
-      console.log(index.batch())
+      console.log("TODO")
   )
   
   program.parse(process.argv)
