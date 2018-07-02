@@ -22,6 +22,10 @@ jest.mock('../../lib/index', () => {
       }
       return {
         importer: jest.fn().mockImplementation(impFun),
+        exporter: jest.fn().mockImplementation(impFun),
+        outputTo: {
+            console: jest.fn().mockImplementation(impFun)
+        }
       }
 })
 
@@ -29,6 +33,12 @@ jest.mock('../../package.json', () => {
     const randomNumber = () => Math.floor((Math.random() * 10) + 1)
     return {
         version: `${randomNumber()}.${randomNumber()}.${randomNumber()}`
+    }
+})
+
+jest.mock('path', () => {
+    return {
+        join: jest.fn()
     }
 })
 
@@ -43,7 +53,7 @@ describe('command line', () => {
     })
 
     it("is has command to convert in consol with correct description", () => {
-        expect(commander.command.mock.calls[0][0]).toBe("console")
+        expect(commander.command.mock.calls[0][0]).toBe("console <email> <path> <viewId> <startDate> <endDate> <metrics> <dimensions>")
         expect(commander.description.mock.calls[0][0]).toBe("get data to console from google analytics")
         expect(commander.action.mock.calls[0][0]).toBeInstanceOf(Function)
     })
