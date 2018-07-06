@@ -35,12 +35,12 @@
     ]
   },
   "devDependencies": {
-    "coveralls": "3.0.1",
+    "coveralls": "3.0.2",
     "faker": "4.1.0",
-    "jest": "23.2.0"
+    "jest": "23.3.0"
   },
   "dependencies": {
-    "commander": "2.15.1",
+    "commander": "2.16.0",
     "googleapis": "32.0.0",
     "moment": "2.22.2"
   }
