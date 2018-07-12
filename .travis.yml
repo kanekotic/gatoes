@@ -3,7 +3,8 @@ sudo: false
 node_js:
 - node
 before_install:
-- openssl aes-256-cbc -K $encrypted_f0cb5834ebc7_key -iv $encrypted_f0cb5834ebc7_iv -in ./resources/random.enc -out ./key.pem -d
+- openssl aes-256-cbc -K $encrypted_f0cb5834ebc7_key -iv $encrypted_f0cb5834ebc7_iv
+  -in ./resources/random.enc -out ./key.pem -d
 script:
 - yarn test:cov
 deploy:
@@ -14,4 +15,4 @@ deploy:
   on:
     tags: true
 env:
-  secure: eytAmptYxGe6SQ1PHX1EPAIEoAgF6+WIyTKbxUCkQssVvmZpTZw6+UPRGQfftWUANv88bC2wahg1Q9riQqNXrwm9z1dFIjjSkRbej6T/xDuzOpw9C/xq/BTlHFQqytYPwAwo+JBbk40dK9iohtHkVCbgVpGi/XMdvsfzJCb8+A0Yhh187USoyI/HZ2YfcSwxwF6p0E3Hdx/QdB7QSW/pmYn8CwWwBa6msqAD8PMwYh97s1pRVCAmYJVwWQeVCGTmkIdkRYt0u+tzRODRVFMmIFama4PhR8/6vvsG0B6FRnROnJTuX5x3kvbHUyeX/DJZnvbbGPlEkMzrU3SKLWPjGUXV2xs1CVTk/eY4XNx80xPYrQr9lRijYBFvnnUAFnQIGTDqc8Dd09jIQWia9Z8ADAq285dWmu0iQBKoaDq/vABdl2FMe7TMCVuFy8NiR3SIT5rsLyiMzYwXpQsya12FcOKbvkjovWj8PunBZPn1UoThpwsD+MlX/DqMqJg+7YOp+kL++DKhxVOLZ+Qe1lmmfgSfa3M7PHe+4N74o6iTugRNpr2NpwHAo8Sz/YLWLb0egCe/k448I/aGjiDYYGLT8JeqHaPYoAw/Yuxb4EZ2kp2dgH+vLRowW71rC5sMtBnkbdg3fMfiER71lHdLI8BJ78lwe22ogooClWq3Sln03EI=
+  secure: xTVGJgcYp2PwxoQcCecr6RKuI2xrCwh2SSUY0Osg1cM4Co9tgMYmjB/E3LgTBHbJIPqeboLJZg2qJpqm8skdOFpX6zOVS8LRQuB9hNg/TsOPQgL6t9JeiAT4KczqfCwCovc3toIjBKBeU6YQ5hNL4D5h2HnmfF9Y8Okxv/5jblnGnnZ0j8oq2tRvAAcz9xGvw02ZWnBQyC2jsbKEnYks8FHFfqPvswZT69lXbD+hN9Fv0pC1o68FBTEOrmJjuDgp7bGhQV8RN9vy1NBC5nOkLCvg4pGFx9YCgg2jmoUI91/t02cpsD5mDII/fXajx/moW1er/HURYq0IG61KXA2Uypn3Ul/a8EaMzVrMfUGXBi1Cr2SjSaYLy94A0MAPh8FKVlXtKd+lF6r3z2yBOl6cq5mSTJHQJuI8/WLd/TvgNudn47YFiRqw4/nb7Inrxni2hP33fxfdXgmLD/CWVUi7YogiqDhHt8RzIsawtzJAynH85LdgipcZYFBkSgD+qzxnvNBvMQm5w9B8tRXZ/vQdbebQblY0TdkORd/F/i+hZY7VCiXSb03083ogNQ33Nj+dIHET6qK34VnIsMGo1NZqiL5Ls8udbrO64vfv7xRizBuEybS2Q0WS8Bejzt4KO4hJDR0FDwC5dogXJuaJTR63sEGbHluCVyaTiG0wFHi5hYk=
