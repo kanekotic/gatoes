@@ -507,6 +507,13 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
+coffee@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/coffee/-/coffee-4.1.0.tgz#3a74c8d61532867350253c9bcc4f8e346694d91f"
+  dependencies:
+    cross-spawn "^5.1.0"
+    debug "^2.6.8"
+
 collection-visit@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/collection-visit/-/collection-visit-1.0.0.tgz#4bc0373c164bc3291b4d368c829cf1a80a59dca0"
@@ -577,7 +584,7 @@ coveralls@3.0.2:
     minimist "^1.2.0"
     request "^2.85.0"
 
-cross-spawn@^5.0.1:
+cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
   dependencies:

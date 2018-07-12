@@ -2,12 +2,17 @@ language: node_js
 sudo: false
 node_js:
 - node
+before_install:
+- openssl aes-256-cbc -K $encrypted_f0cb5834ebc7_key -iv $encrypted_f0cb5834ebc7_iv
+  -in ./resources/random.enc -out ./key.pem -d
 script:
 - yarn test:cov
 deploy:
   skip_cleanup: true
   provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_TOKEN
+  email: "$NPM_EMAIL"
+  api_key: "$NPM_TOKEN"
   on:
     tags: true
+env:
+  secure: 47e5ijtlLLC1poWeSHG/2A+aVB5wMGlUim4RfUQx3UDGz+LKPogmj/A+KaucPYb9Q5yA7+NCGL7LZS6C6Jm4kv8JXUYI9vvL8e/kof9oTNSKgXpJVfdd269XvFce+AHUQHRHsjKtZpQq6UsyesdBV6A7U9C+nmRAZXMK9T+kGxRaX7PiBUsmPGMJ3P8jhKLhcfSFipewOWszB+pMyPIe791UQ7WXF0Olx5Sob13+EexBrqUYqMo81vSY8yoHTtsfc0GVVh2X1WtgNzceu47HatI53UydQdEkY6ab+eOYebnWHDqCZRr7gaY+5vuNgVCetf6efqx6J4wQ9br1agH5bhpMJnXA2nzYGfl6XzgREJJDwsNSGlypnJY0nT7lZgLqd8aqQOLh/IhF375ARohXtXHXFdDA6iAsnB/JuIExBbj0cQaJzBF8koOr3x+UMgq04nTJEVum8RSsrn0Cc4UT+ZtRq+I+g+bq+CnATAW/GvSq0lytiqBE57nOsB9xXFtklodflvds3mqVnU7sq06Sx6fD2C9IBaNeXWlwQ0IGuONtOuhf9WRa4Z/GkRYdLmIOYtqkLPLzBVhtz6iKKafRVaf2v7sHvhPufKcU30c2mRZ/L8oAfeeKYST240TmALa9K2hANc2XLra8v0mNv2uEm7WyPIITa8hBtyj08hnFzBg=
