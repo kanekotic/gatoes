@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/kanekotic/gatoo.svg?branch=master)](https://travis-ci.org/kanekotic/gatoo)
 [![Coverage Status](https://coveralls.io/repos/github/kanekotic/gatoo/badge.svg?branch=master)](https://coveralls.io/github/kanekotic/gatoo?branch=master)
+[![GitHub license](https://img.shields.io/github/license/kanekotic/gatoo.svg)](https://github.com/kanekotic/gatoo/blob/master/LICENSE)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/kanekotic/gatoo/graphs/commit-activity)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/kanekotic/)
 
 this project will provide a command line and a library to export google analytics to your prefered endpoint (console, log management, or db).
 
