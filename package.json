@@ -38,7 +38,7 @@
     "coffee": "5.1.0",
     "coveralls": "3.0.2",
     "faker": "4.1.0",
-    "jest": "23.4.2"
+    "jest": "23.5.0"
   },
   "dependencies": {
     "commander": "2.17.1",
