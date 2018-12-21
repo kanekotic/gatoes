@@ -35,7 +35,7 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "coffee": "5.1.0",
+    "coffee": "5.1.1",
     "coveralls": "3.0.2",
     "faker": "4.1.0",
     "jest": "23.6.0"
