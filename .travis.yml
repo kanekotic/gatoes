@@ -3,7 +3,7 @@ language: node_js
 node_js:
   - node
 before_install:
-  - openssl aes-256-cbc -K $encrypted_f0cb5834ebc7_key -iv $encrypted_f0cb5834ebc7_iv -in ./resources/random.enc -out ./key.pem -d
+  - openssl aes-256-cbc -k "$pass" -in resources/random.enc -out key.p12 -d
 script:
   - yarn test:cov
 after_success:
@@ -16,4 +16,5 @@ deploy:
   on:
     tags: true
 env:
-  secure: xTVGJgcYp2PwxoQcCecr6RKuI2xrCwh2SSUY0Osg1cM4Co9tgMYmjB/E3LgTBHbJIPqeboLJZg2qJpqm8skdOFpX6zOVS8LRQuB9hNg/TsOPQgL6t9JeiAT4KczqfCwCovc3toIjBKBeU6YQ5hNL4D5h2HnmfF9Y8Okxv/5jblnGnnZ0j8oq2tRvAAcz9xGvw02ZWnBQyC2jsbKEnYks8FHFfqPvswZT69lXbD+hN9Fv0pC1o68FBTEOrmJjuDgp7bGhQV8RN9vy1NBC5nOkLCvg4pGFx9YCgg2jmoUI91/t02cpsD5mDII/fXajx/moW1er/HURYq0IG61KXA2Uypn3Ul/a8EaMzVrMfUGXBi1Cr2SjSaYLy94A0MAPh8FKVlXtKd+lF6r3z2yBOl6cq5mSTJHQJuI8/WLd/TvgNudn47YFiRqw4/nb7Inrxni2hP33fxfdXgmLD/CWVUi7YogiqDhHt8RzIsawtzJAynH85LdgipcZYFBkSgD+qzxnvNBvMQm5w9B8tRXZ/vQdbebQblY0TdkORd/F/i+hZY7VCiXSb03083ogNQ33Nj+dIHET6qK34VnIsMGo1NZqiL5Ls8udbrO64vfv7xRizBuEybS2Q0WS8Bejzt4KO4hJDR0FDwC5dogXJuaJTR63sEGbHluCVyaTiG0wFHi5hYk=
+  global:
+    secure: nqzPpSYbY7VWvUPmbQBeSlCHXVKNLgJHko3CS3BXq+Wiv81lmm44tK59l8ORjy4JqAtRNrKaBiLj+Eikki5NMrQ+1kWf34wxNSJBCUIkZmcSLY92hTLeFwUW79q48ZEFkX6pYDKkrkqdtPfRYLI9PmyhKaFlbJtjTkaIFEj6rKLoUSDdb2Z+b5r4J3F0ENYBZWhABMwtnOaae2bk6LJ8nJdceHmQwRXhXuNl4EEC5QsN9TjCXrTeIn05paazYCjXftzXEBFOnj5T9DClcnLnZeQV62Sksabvu/aRIbCKpd+UmVEs2o88hP53nlwY4Y66YZffbV+Ef16dimMIuyl/0J63SHaPzX9Z+oOhcohfxuESnsrogbBxRBdL5Lq+SyVkfaWJ1tKUhb1zeXrGVuOxgso3tk+CvJa04G+E50a6RoCC3d2hs0Y3f2Uh1WsjBQYAf7Rkdls2OJMqZg16ObL4w4k60e3VmytnxYX5FA/ZXTQpLzq+9DJNckWvl2ABBWxzpG7q7CUHHGqQDx6vpF9wj7OLatk8GovZN4xH3WydX0GSrIFcyyvq++KWl5C0rxG3VYIPLkOE9ABNw+SmoatdzKIDkYchG+0Pivui4cmnF56+WuKF1RHzliUtf9hSwEQeBhiY8Rwrr3ZxOwUOcFF/oLsacE1vlHYnMAOyC9gqEyw=
