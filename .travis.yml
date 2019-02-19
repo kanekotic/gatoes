@@ -5,7 +5,7 @@ node_js:
 before_install:
   - openssl aes-256-cbc -k "$pass" -in resources/random.enc -out key.json -d
 script:
-  - yarn test:cov
+  - yarn test
 after_success:
   - if [[ "${TRAVIS_EVENT_TYPE}" = "cron" ]]; then ./upgrade.sh; fi
 deploy:
