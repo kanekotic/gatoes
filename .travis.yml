@@ -3,7 +3,7 @@ language: node_js
 node_js:
   - node
 before_install:
-  - openssl aes-256-cbc -k "$pass" -in resources/random.enc -out key.p12 -d
+  - openssl aes-256-cbc -k "$pass" -in resources/random.enc -out key.json -d
 script:
   - yarn test:cov
 after_success:
