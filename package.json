@@ -25,6 +25,7 @@
     "deploy:major": "yarn version --major",
     "deploy:minor": "yarn version --minor",
     "deploy:patch": "yarn version --patch",
+    "deploy:push": "git push && git push --tags",
     "preversion": "yarn test"
   },
   "jest": {
