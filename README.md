@@ -1,7 +1,7 @@
 # ![logomakr_32f2md](https://user-images.githubusercontent.com/3071208/42147664-29898cca-7dcf-11e8-9c50-2cf3845b7fe8.png)
 
 [![Build Status](https://travis-ci.org/kanekotic/gatoo.svg?branch=master)](https://travis-ci.org/kanekotic/gatoo)
-[![Coverage Status](https://coveralls.io/repos/github/kanekotic/gatoo/badge.svg?branch=master)](https://coveralls.io/github/kanekotic/gatoo?branch=master)
+[![codecov](https://codecov.io/gh/kanekotic/gatoo/branch/master/graph/badge.svg)](https://codecov.io/gh/kanekotic/gatoo)
 [![npm](https://img.shields.io/npm/dt/gatoo.svg)](https://github.com/kanekotic/gatoo)
 [![GitHub license](https://img.shields.io/github/license/kanekotic/gatoo.svg)](https://github.com/kanekotic/gatoo/blob/master/LICENSE)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/kanekotic/gatoo/graphs/commit-activity)

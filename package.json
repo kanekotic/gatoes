@@ -20,7 +20,7 @@
   "scripts": {
     "test": "jest",
     "test:dev": "jest --watchAll",
-    "test:cov": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:cov": "jest --coverage && codecov",
     "push": "yarn test && git push",
     "deploy:major": "yarn version --major",
     "deploy:minor": "yarn version --minor",
@@ -36,8 +36,8 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
+    "codecov": "3.2.0",
     "coffee": "5.2.1",
-    "coveralls": "3.0.3",
     "faker": "4.1.0",
     "jest": "24.3.1"
   },
