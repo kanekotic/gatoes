@@ -37,13 +37,13 @@
   },
   "devDependencies": {
     "codecov": "3.5.0",
-    "coffee": "5.2.1",
+    "coffee": "5.2.2",
     "faker": "4.1.0",
     "jest": "24.8.0"
   },
   "dependencies": {
     "commander": "2.20.0",
-    "googleapis": "41.0.1",
+    "googleapis": "42.0.0",
     "moment": "2.24.0"
   }
 }
