@@ -1370,9 +1370,9 @@ globals@^11.1.0:
   integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
 
 google-auth-library@^5.2.0:
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-5.4.1.tgz#a7a10695503ddeb10be96671965d81c553bbe429"
-  integrity sha512-0KsKBGvlPBNHBkLmw2dfYWDHTuCGCWJrDTzzbYbJO8/ZfcEQ4RJ9Xo1Tnba0a/ZCxPHUkpHqBMB/aRTvnNvxPg==
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-5.5.0.tgz#72f24f484db75fa2701e8ad720a5a950e20c83d1"
+  integrity sha512-TNeraw4miu6/FhO0jDrHiJuRx3SBrAhxHSPj7+rhif43bKE34UItXX9lejKxo3E8FNytuY4LIVIvpcqMQHSYZw==
   dependencies:
     arrify "^2.0.0"
     base64-js "^1.3.0"
@@ -1402,10 +1402,10 @@ googleapis-common@^3.1.0:
     url-template "^2.0.8"
     uuid "^3.3.2"
 
-googleapis@43.0.0:
-  version "43.0.0"
-  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-43.0.0.tgz#fcb1408fd1bd3f74eb9c4ca2b14ac7765ee0e50e"
-  integrity sha512-4b38mlTdDCA3KiyRTQmfPpeTxznC5ufgqx3AvKaEIoVm+iWeVLfwYs++/+OcGJJriH9bcs0gPbU7CR8DU6Oevg==
+googleapis@44.0.0:
+  version "44.0.0"
+  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-44.0.0.tgz#e78dc5dee734225a82136616c536fa97d4e2d12f"
+  integrity sha512-xfToYX/Z7zkGJnMjA2FTRZGqc3W+3WjU7KH6jh6+GvQBxEofZjEcfDmy+h+yZKeky7mWBT35LdRr1MM2jXYnyA==
   dependencies:
     google-auth-library "^5.2.0"
     googleapis-common "^3.1.0"
@@ -3587,9 +3587,9 @@ type-check@~0.3.2:
     prelude-ls "~1.1.2"
 
 uglify-js@^3.1.4:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.6.1.tgz#ae7688c50e1bdcf2f70a0e162410003cf9798311"
-  integrity sha512-+dSJLJpXBb6oMHP+Yvw8hUgElz4gLTh82XuX68QiJVTXaE5ibl6buzhNkQdYhBlIhozWOC9ge16wyRmjG4TwVQ==
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.6.2.tgz#fd8048c86d990ddd29fe99d3300e0cb329103f4d"
+  integrity sha512-+gh/xFte41GPrgSMJ/oJVq15zYmqr74pY9VoM69UzMzq9NFk4YDylclb1/bhEzZSaUQjbW5RvniHeq1cdtRYjw==
   dependencies:
     commander "2.20.0"
     source-map "~0.6.1"
