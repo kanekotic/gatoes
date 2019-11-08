@@ -42,8 +42,8 @@
     "jest": "24.9.0"
   },
   "dependencies": {
-    "commander": "3.0.2",
-    "googleapis": "44.0.0",
+    "commander": "4.0.0",
+    "googleapis": "45.0.0",
     "moment": "2.24.0"
   }
 }
