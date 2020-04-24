@@ -37,9 +37,9 @@
   },
   "devDependencies": {
     "codecov": "3.6.5",
-    "coffee": "5.2.2",
+    "coffee": "5.3.0",
     "faker": "4.1.0",
-    "jest": "25.3.0"
+    "jest": "25.4.0"
   },
   "dependencies": {
     "commander": "5.0.0",
