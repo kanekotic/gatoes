@@ -36,7 +36,7 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "codecov": "3.6.5",
+    "codecov": "3.7.0",
     "coffee": "5.4.0",
     "faker": "4.1.0",
     "jest": "26.0.1"
@@ -44,6 +44,6 @@
   "dependencies": {
     "commander": "5.1.0",
     "googleapis": "51.0.0",
-    "moment": "2.25.3"
+    "moment": "2.26.0"
   }
 }
