@@ -170,6 +170,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.1"
 
+"@babel/plugin-syntax-import-meta@^7.8.3":
+  version "7.10.1"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-import-meta/-/plugin-syntax-import-meta-7.10.1.tgz#3e59120ed8b3c2ccc5abb1cfc7aaa3ea01cd36b6"
+  integrity sha512-ypC4jwfIVF72og0dgvEcFRdOM2V9Qm1tu7RGmdZOlhsccyK0wisXmMObGuWEOd5jQ+K9wcIgSNftCpk2vkjUfQ==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.10.1"
+
 "@babel/plugin-syntax-json-strings@^7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-json-strings/-/plugin-syntax-json-strings-7.8.3.tgz#01ca21b668cd8218c9e640cb6dd88c5412b2c96a"
@@ -584,9 +591,9 @@ acorn-globals@^6.0.0:
     acorn-walk "^7.1.1"
 
 acorn-walk@^7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-7.1.1.tgz#345f0dffad5c735e7373d2fec9a1023e6a44b83e"
-  integrity sha512-wdlPY2tm/9XBr7QkKlq0WQVgiuGTX6YWPyRyBviSoScBuLfTVQhvwg6wJ369GJ/1nPfTLMfnrFIfjqVg6d+jQQ==
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-7.2.0.tgz#0de889a601203909b0fbe07b8938dc21d2e967bc"
+  integrity sha512-OPdCF6GsMIP+Az+aWfAAOEt2/+iVDKE7oy6lJ098aoe59oAmK76qV6Gw60SbZ8jHuG2wH058GF4pLFbYamYrVA==
 
 acorn@^7.1.1:
   version "7.3.1"
@@ -767,13 +774,14 @@ babel-plugin-jest-hoist@^26.0.0:
     "@types/babel__traverse" "^7.0.6"
 
 babel-preset-current-node-syntax@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/babel-preset-current-node-syntax/-/babel-preset-current-node-syntax-0.1.2.tgz#fb4a4c51fe38ca60fede1dc74ab35eb843cb41d6"
-  integrity sha512-u/8cS+dEiK1SFILbOC8/rUI3ml9lboKuuMvZ/4aQnQmhecQAgPw5ew066C1ObnEAUmlx7dv/s2z52psWEtLNiw==
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/babel-preset-current-node-syntax/-/babel-preset-current-node-syntax-0.1.3.tgz#b4b547acddbf963cba555ba9f9cbbb70bfd044da"
+  integrity sha512-uyexu1sVwcdFnyq9o8UQYsXwXflIh8LvrF5+cKrYam93ned1CStffB3+BEcsxGSgagoA3GEyjDqO4a/58hyPYQ==
   dependencies:
     "@babel/plugin-syntax-async-generators" "^7.8.4"
     "@babel/plugin-syntax-bigint" "^7.8.3"
     "@babel/plugin-syntax-class-properties" "^7.8.3"
+    "@babel/plugin-syntax-import-meta" "^7.8.3"
     "@babel/plugin-syntax-json-strings" "^7.8.3"
     "@babel/plugin-syntax-logical-assignment-operators" "^7.8.3"
     "@babel/plugin-syntax-nullish-coalescing-operator" "^7.8.3"
@@ -820,10 +828,10 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-bignumber.js@^7.0.0:
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-7.2.1.tgz#80c048759d826800807c4bfd521e50edbba57a5f"
-  integrity sha512-S4XzBk5sMB+Rcb/LNcpzXr57VRTxgAvaAEDAl1AwRx27j00hT84O6OkteE7u8UB3NuaaygCRrEpqox4uDOrbdQ==
+bignumber.js@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.0.0.tgz#805880f84a329b5eac6e7cb6f8274b6d82bdf075"
+  integrity sha512-t/OYhhJ2SD+YGBQcjY8GzzDHEk9f3nerxjtfa6tlMXfe7frs/WozhvCNoGvpM0P3bNf3Gq5ZRMlGr5f3r4/N8A==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -1407,9 +1415,9 @@ fast-levenshtein@~2.0.6:
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
 fast-text-encoding@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/fast-text-encoding/-/fast-text-encoding-1.0.2.tgz#ff1ad5677bde049e0f8656aa6083a7ef2c5836e2"
-  integrity sha512-5rQdinSsycpzvAoHga2EDn+LRX1d5xLFsuNG0Kg61JrAT/tASXcLL0nf/33v+sAxlQcfYmWbTURa1mmAf55jGw==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/fast-text-encoding/-/fast-text-encoding-1.0.3.tgz#ec02ac8e01ab8a319af182dae2681213cfe9ce53"
+  integrity sha512-dtm4QZH9nZtcDt8qJiOH9fcQd1NAgi+K1O2DbE6GG1PPCK/BWfOH3idCTRQ4ImXRUOyopDEgDEnVEE7Y/2Wrig==
 
 fb-watchman@^2.0.0:
   version "2.0.1"
@@ -1557,9 +1565,9 @@ globals@^11.1.0:
   integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
 
 google-auth-library@^6.0.0:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-6.0.1.tgz#b5bbff2583f024188a37920cb509e194f2cc4dd2"
-  integrity sha512-NWEM9W0o+fmUJMK/wEuJ1vAc8H/JAseOWB8tjOAAkz8yobU+5IDtO/rPCbbRwFF1obIOCe0lj1pkq9ld2OFZeg==
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-6.0.2.tgz#fd640387061e4d4b40ba063636f8ea8416b121cc"
+  integrity sha512-o/F/GiOPzDc49v5/6vfrEz3gRXvES49qGP84rrl3SO0efJA/M52hFwv2ozd1EC1TPrLj75Moj3iPgKGuGs6smA==
   dependencies:
     arrify "^2.0.0"
     base64-js "^1.3.0"
@@ -1579,9 +1587,9 @@ google-p12-pem@^3.0.0:
     node-forge "^0.9.0"
 
 googleapis-common@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/googleapis-common/-/googleapis-common-4.3.0.tgz#39d2d44216bc44a09853260b9c4edc1f46362428"
-  integrity sha512-9xFX0A+PkJ9DUh2Cq81+Nx+J+v0Geo5Vgte8PKEQP5Wrbt5UfX964AGb+QhkfirlxlHrfpm7n5FRmr2FxktB/A==
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/googleapis-common/-/googleapis-common-4.4.0.tgz#b806e41c4e883f22b68769aafb3ed11802919091"
+  integrity sha512-Bgrs8/1OZQFFIfVuX38L9t48rPAkVUXttZy6NzhhXxFOEMSHgfFIjxou7RIXOkBHxmx2pVwct9WjKkbnqMYImQ==
   dependencies:
     extend "^3.0.2"
     gaxios "^3.0.0"
@@ -2420,11 +2428,11 @@ jsesc@^2.5.1:
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
 
 json-bigint@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/json-bigint/-/json-bigint-0.3.0.tgz#0ccd912c4b8270d05f056fbd13814b53d3825b1e"
-  integrity sha1-DM2RLEuCcNBfBW+9E4FLU9OCWx4=
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/json-bigint/-/json-bigint-0.3.1.tgz#0c1729d679f580d550899d6a2226c228564afe60"
+  integrity sha512-DGWnSzmusIreWlEupsUelHrhwmPPE+FiQvg+drKfk2p+bdEYa5mp4PJ8JsCWqae0M2jQNb0HPvnwvf1qOTThzQ==
   dependencies:
-    bignumber.js "^7.0.0"
+    bignumber.js "^9.0.0"
 
 json-parse-better-errors@^1.0.1:
   version "1.0.2"
@@ -2651,10 +2659,10 @@ mixin-deep@^1.2.0:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
 
-moment@2.26.0:
-  version "2.26.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.26.0.tgz#5e1f82c6bafca6e83e808b30c8705eed0dcbd39a"
-  integrity sha512-oIixUO+OamkUkwjhAVE18rAMfRJNsNe/Stid/gwHSOfHrOtw9EhAY2AHvdKZ/k/MggcYELFCJz/Sn2pL8b8JMw==
+moment@2.27.0:
+  version "2.27.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
+  integrity sha512-al0MUK7cpIcglMv3YF13qSgdAIqxHTO7brRtaz3DlSULbqfazqkc5kEjNrLDOM7fsjshoFIihnU8snrP7zUvhQ==
 
 ms@2.0.0:
   version "2.0.0"

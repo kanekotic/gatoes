@@ -44,6 +44,6 @@
   "dependencies": {
     "commander": "5.1.0",
     "googleapis": "52.1.0",
-    "moment": "2.26.0"
+    "moment": "2.27.0"
   }
 }
