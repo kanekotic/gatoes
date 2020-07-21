@@ -36,7 +36,7 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "codecov": "3.7.0",
+    "codecov": "3.7.1",
     "coffee": "5.4.0",
     "faker": "4.1.0",
     "jest": "26.1.0"
