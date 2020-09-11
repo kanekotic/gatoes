@@ -1,6 +1,6 @@
 {
   "name": "gatoo",
-  "version": "0.1.104",
+  "version": "0.1.105",
   "description": "google analytics export",
   "main": "lib/index.js",
   "repository": "git@github.com:kanekotic/gatoes.git",
