@@ -39,11 +39,11 @@
     "codecov": "3.8.0",
     "coffee": "5.4.0",
     "faker": "5.1.0",
-    "jest": "26.6.0"
+    "jest": "26.6.1"
   },
   "dependencies": {
-    "commander": "6.1.0",
-    "googleapis": "61.0.0",
+    "commander": "6.2.0",
+    "googleapis": "62.0.0",
     "moment": "2.29.1"
   }
 }
